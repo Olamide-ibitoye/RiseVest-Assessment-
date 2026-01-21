@@ -1,0 +1,22 @@
+{
+  "name": "playwright-risevest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "auth": "playwright test tests/auth.setup.spec.js --project=chromium --headed",
+    "test:wallet": "playwright test tests/wallet.spec.js --project=chromium --headed --reporter=line",
+    "test:wallet:toggle": "playwright test tests/wallet.spec.js -g \"toggle wallet balance\" --project=chromium --headed --reporter=line",
+    "report": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.9"
+  }
+}

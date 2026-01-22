@@ -5,10 +5,16 @@ const authFile = 'playwright/.auth/state.json';
 test('authenticate (manual OTP) and save storage state', async ({ page, browserName }, testInfo) => {
   test.setTimeout(10 * 60 * 1000);
 
+  if (process.env.RUN_AUTH_SETUP !== '1') {
+    test.skip(true, 'Manual OTP auth setup is opt-in. Run with RUN_AUTH_SETUP=1 (see `npm run auth`).');
+  }
+
   if (browserName !== 'chromium') {
     test.skip(true, 'Manual OTP auth setup is only supported in headed Chromium for this project.');
   }
-  if (testInfo.project.use.headless) {
+
+  const isHeaded = testInfo.project.use.headless === false;
+  if (!isHeaded) {
     test.skip(true, 'Manual OTP auth setup requires headed mode. Run `npm run auth` instead.');
   }
 

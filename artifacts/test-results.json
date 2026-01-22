@@ -1,0 +1,1187 @@
+﻿{
+  "config": {
+    "configFile": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\playwright.config.js",
+    "rootDir": "C:/Users/DELL/Desktop/Playwright-Risevest/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/DELL/Desktop/Playwright-Risevest/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/DELL/Desktop/Playwright-Risevest/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/DELL/Desktop/Playwright-Risevest/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/DELL/Desktop/Playwright-Risevest/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/DELL/Desktop/Playwright-Risevest/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/DELL/Desktop/Playwright-Risevest/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "auth.setup.spec.js",
+      "file": "auth.setup.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "authenticate (manual OTP) and save storage state",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 15023,
+                  "error": {
+                    "message": "Error: The login page shows an \"Account Disabled\" modal in this session. Close the modal (if possible) or retry later / use a different account, then run `npm run auth` again.",
+                    "stack": "Error: The login page shows an \"Account Disabled\" modal in this session. Close the modal (if possible) or retry later / use a different account, then run `npm run auth` again.\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\auth.setup.spec.js:26:11",
+                    "location": {
+                      "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\auth.setup.spec.js",
+                      "column": 11,
+                      "line": 26
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 24 |\u001b[39m   \u001b[36mconst\u001b[39m accountDisabled \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Account Disabled'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[36mawait\u001b[39m accountDisabled\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 |\u001b[39m     \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 27 |\u001b[39m       \u001b[32m'The login page shows an \"Account Disabled\" modal in this session. Close the modal (if possible) or retry later / use a different account, then run `npm run auth` again.'\u001b[39m\n \u001b[90m 28 |\u001b[39m     )\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m   }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\auth.setup.spec.js",
+                        "column": 11,
+                        "line": 26
+                      },
+                      "message": "Error: The login page shows an \"Account Disabled\" modal in this session. Close the modal (if possible) or retry later / use a different account, then run `npm run auth` again.\n\n  24 |   const accountDisabled = page.getByText('Account Disabled');\n  25 |   if (await accountDisabled.isVisible().catch(() => false)) {\n> 26 |     throw new Error(\n     |           ^\n  27 |       'The login page shows an \"Account Disabled\" modal in this session. Close the modal (if possible) or retry later / use a different account, then run `npm run auth` again.'\n  28 |     );\n  29 |   }\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\auth.setup.spec.js:26:11"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-22T09:14:51.711Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\test-results\\auth.setup-authenticate-manual-OTP-and-save-storage-state-chromium\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\auth.setup.spec.js",
+                    "column": 11,
+                    "line": 26
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4d88f4acbce031b69e76-3f73293e498c00f9b1ec",
+          "file": "auth.setup.spec.js",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "authenticate (manual OTP) and save storage state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Manual OTP auth setup is only supported in headed Chromium for this project.",
+                  "location": {
+                    "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\auth.setup.spec.js",
+                    "line": 9,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
+                  "status": "skipped",
+                  "duration": 14898,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-22T09:16:29.790Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Manual OTP auth setup is only supported in headed Chromium for this project.",
+                      "location": {
+                        "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\auth.setup.spec.js",
+                        "line": 9,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "4d88f4acbce031b69e76-e55d637e00cadd6d7dd6",
+          "file": "auth.setup.spec.js",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "authenticate (manual OTP) and save storage state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Manual OTP auth setup is only supported in headed Chromium for this project.",
+                  "location": {
+                    "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\auth.setup.spec.js",
+                    "line": 9,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "skipped",
+                  "duration": 2533,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-22T09:18:33.488Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Manual OTP auth setup is only supported in headed Chromium for this project.",
+                      "location": {
+                        "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\auth.setup.spec.js",
+                        "line": 9,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "4d88f4acbce031b69e76-ef15adb85b2057a85016",
+          "file": "auth.setup.spec.js",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "login.spec.js",
+      "file": "login.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Login",
+          "file": "login.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "shows error for invalid credentials",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 18236,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:14:51.796Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "badc1754af1944f68b2b-9ec36cf522b2c120416e",
+              "file": "login.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "shows error for invalid credentials",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30271,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\login.spec.js",
+                            "column": 16,
+                            "line": 6
+                          },
+                          "message": "Error: page.goto: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://app.risevest.com/login\", waiting until \"load\"\u001b[22m\n\n\n  4 | test.describe('Login', () => {\n  5 |   test('shows error for invalid credentials', async ({ page }) => {\n> 6 |     await page.goto('/login');\n    |                ^\n  7 |\n  8 |     await page.getByRole('textbox', { name: 'Email input field' }).fill('invalid@example.com');\n  9 |     await page.getByRole('textbox', { name: 'Password input field' }).fill('wrong-password');\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\login.spec.js:6:16"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:16:29.868Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "badc1754af1944f68b2b-cc4dd44c5eefe68e91ab",
+              "file": "login.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "shows error for invalid credentials",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30131,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\login.spec.js",
+                            "column": 68,
+                            "line": 8
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('textbox', { name: 'Email input field' })\u001b[22m\n\n\n   6 |     await page.goto('/login');\n   7 |\n>  8 |     await page.getByRole('textbox', { name: 'Email input field' }).fill('invalid@example.com');\n     |                                                                    ^\n   9 |     await page.getByRole('textbox', { name: 'Password input field' }).fill('wrong-password');\n  10 |     await page.getByRole('button', { name: 'Sign in' }).click();\n  11 |\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\login.spec.js:8:68"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:18:36.584Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\test-results\\login-Login-shows-error-for-invalid-credentials-webkit\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "badc1754af1944f68b2b-64824bb7cda8ef57c922",
+              "file": "login.spec.js",
+              "line": 5,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "plans.spec.js",
+      "file": "plans.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Plans",
+          "file": "plans.spec.js",
+          "line": 27,
+          "column": 6,
+          "specs": [
+            {
+              "title": "can navigate to investment plans area",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30561,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js",
+                            "column": 55,
+                            "line": 40
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: /Create\\s+investment\\s+plan/i }).or(getByRole('button', { name: /Create\\s+an\\s+investment\\s+plan|Create\\s+investment\\s+plan/i }))\nExpected: visible\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: /Create\\s+investment\\s+plan/i }).or(getByRole('button', { name: /Create\\s+an\\s+investment\\s+plan|Create\\s+investment\\s+plan/i }))\u001b[22m\n\n\n  38 |     const createPlanLink = page.getByRole('link', { name: /Create\\s+investment\\s+plan/i });\n  39 |     const createPlanButton = page.getByRole('button', { name: /Create\\s+an\\s+investment\\s+plan|Create\\s+investment\\s+plan/i });\n> 40 |     await expect(createPlanLink.or(createPlanButton)).toBeVisible({ timeout: 30000 });\n     |                                                       ^\n  41 |   });\n  42 |\n  43 |   test('can start creating a real estate plan (no funding)', async ({ page }) => {\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js:40:55"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:15:11.115Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\test-results\\plans-Plans-can-navigate-to-investment-plans-area-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1fc082ac85ac01c36794-0662fd32b2a7f98040be",
+              "file": "plans.spec.js",
+              "line": 28,
+              "column": 3
+            },
+            {
+              "title": "can start creating a real estate plan (no funding)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30198,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js",
+                            "column": 54,
+                            "line": 49
+                          },
+                          "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Invest' })\u001b[22m\n\u001b[2m    - locator resolved to <a role=\"link\" tabindex=\"0\" href=\"/invest\" class=\"css-g5y9jx r-1loqt21 r-1otgn73 flex flex-row gap-x-sm2 overflow-hidden rounded-sm2 border border-grey-200/0 px-sm2 py-xs\">ΓÇª</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"css-g5y9jx items-center gap-y-2xl\">ΓÇª</div> from <div class=\"css-g5y9jx r-1p0dtai r-1d2f490 r-u8s1d r-zchlnj r-ipm5af z-50\">ΓÇª</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not visible\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    19 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n  47 |\n  48 |     await expect(page.getByRole('link', { name: 'Invest' })).toBeVisible();\n> 49 |     await page.getByRole('link', { name: 'Invest' }).click();\n     |                                                      ^\n  50 |     await expect(page).toHaveURL(/invest/i);\n  51 |\n  52 |     const createPlanLink = page.getByRole('link', { name: /Create\\s+investment\\s+plan/i });\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js:49:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:15:16.441Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\test-results\\plans-Plans-can-start-crea-aba92-eal-estate-plan-no-funding--chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1fc082ac85ac01c36794-b42c1b153425edee7435",
+              "file": "plans.spec.js",
+              "line": 43,
+              "column": 3
+            },
+            {
+              "title": "can navigate to investment plans area",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 27496,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Invest' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Invest' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Invest' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Invest' })\u001b[22m\n\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js:33:62",
+                        "location": {
+                          "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js",
+                          "column": 62,
+                          "line": 33
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m assertAuthenticated(page)\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Invest'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Invest'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/invest/i\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js",
+                            "column": 62,
+                            "line": 33
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Invest' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Invest' })\u001b[22m\n\n\n  31 |     await assertAuthenticated(page);\n  32 |\n> 33 |     await expect(page.getByRole('link', { name: 'Invest' })).toBeVisible();\n     |                                                              ^\n  34 |\n  35 |     await page.getByRole('link', { name: 'Invest' }).click();\n  36 |     await expect(page).toHaveURL(/invest/i);\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js:33:62"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:16:51.964Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\test-results\\plans-Plans-can-navigate-to-investment-plans-area-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js",
+                        "column": 62,
+                        "line": 33
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1fc082ac85ac01c36794-a8e6968a7d702e568988",
+              "file": "plans.spec.js",
+              "line": 28,
+              "column": 3
+            },
+            {
+              "title": "can start creating a real estate plan (no funding)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 29906,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Invest' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Invest' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Invest' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Invest' })\u001b[22m\n\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js:48:62",
+                        "location": {
+                          "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js",
+                          "column": 62,
+                          "line": 48
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 46 |\u001b[39m     \u001b[36mawait\u001b[39m assertAuthenticated(page)\u001b[33m;\u001b[39m\n \u001b[90m 47 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 48 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Invest'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 49 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Invest'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 50 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/invest/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 51 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js",
+                            "column": 62,
+                            "line": 48
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Invest' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Invest' })\u001b[22m\n\n\n  46 |     await assertAuthenticated(page);\n  47 |\n> 48 |     await expect(page.getByRole('link', { name: 'Invest' })).toBeVisible();\n     |                                                              ^\n  49 |     await page.getByRole('link', { name: 'Invest' }).click();\n  50 |     await expect(page).toHaveURL(/invest/i);\n  51 |\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js:48:62"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:17:13.669Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\test-results\\plans-Plans-can-start-crea-aba92-eal-estate-plan-no-funding--firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js",
+                        "column": 62,
+                        "line": 48
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1fc082ac85ac01c36794-439deac948717bb0d1c0",
+              "file": "plans.spec.js",
+              "line": 43,
+              "column": 3
+            },
+            {
+              "title": "can navigate to investment plans area",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 12705,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Invest' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Invest' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Invest' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Invest' })\u001b[22m\n\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js:33:62",
+                        "location": {
+                          "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js",
+                          "column": 62,
+                          "line": 33
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m assertAuthenticated(page)\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Invest'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Invest'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/invest/i\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js",
+                            "column": 62,
+                            "line": 33
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Invest' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Invest' })\u001b[22m\n\n\n  31 |     await assertAuthenticated(page);\n  32 |\n> 33 |     await expect(page.getByRole('link', { name: 'Invest' })).toBeVisible();\n     |                                                              ^\n  34 |\n  35 |     await page.getByRole('link', { name: 'Invest' }).click();\n  36 |     await expect(page).toHaveURL(/invest/i);\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js:33:62"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:18:57.459Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\test-results\\plans-Plans-can-navigate-to-investment-plans-area-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js",
+                        "column": 62,
+                        "line": 33
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1fc082ac85ac01c36794-03db4a672c22794682e2",
+              "file": "plans.spec.js",
+              "line": 28,
+              "column": 3
+            },
+            {
+              "title": "can start creating a real estate plan (no funding)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30068,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js",
+                            "column": 54,
+                            "line": 49
+                          },
+                          "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Invest' })\u001b[22m\n\u001b[2m    - locator resolved to <a role=\"link\" tabindex=\"0\" href=\"/invest\" class=\"css-g5y9jx r-1loqt21 r-1otgn73 flex flex-row gap-x-sm2 overflow-hidden rounded-sm2 border border-grey-200/0 px-sm2 py-xs\">ΓÇª</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m  - element was detached from the DOM, retrying\u001b[22m\n\n\n  47 |\n  48 |     await expect(page.getByRole('link', { name: 'Invest' })).toBeVisible();\n> 49 |     await page.getByRole('link', { name: 'Invest' }).click();\n     |                                                      ^\n  50 |     await expect(page).toHaveURL(/invest/i);\n  51 |\n  52 |     const createPlanLink = page.getByRole('link', { name: /Create\\s+investment\\s+plan/i });\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\plans.spec.js:49:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:19:11.357Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\test-results\\plans-Plans-can-start-crea-aba92-eal-estate-plan-no-funding--webkit\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1fc082ac85ac01c36794-250bc2d269fcc60a3772",
+              "file": "plans.spec.js",
+              "line": 43,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "wallet.spec.js",
+      "file": "wallet.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Wallet",
+          "file": "wallet.spec.js",
+          "line": 27,
+          "column": 6,
+          "specs": [
+            {
+              "title": "can access wallet and switch between NGN and USD wallets",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30265,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js",
+                            "column": 68,
+                            "line": 38
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'NGN Wallet' })\nExpected: visible\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'NGN Wallet' })\u001b[22m\n\n\n  36 |     await expect(page).toHaveURL(/wallet/i);\n  37 |\n> 38 |     await expect(page.getByRole('button', { name: 'NGN Wallet' })).toBeVisible({ timeout: 30000 });\n     |                                                                    ^\n  39 |     await expect(page.getByRole('button', { name: 'USD Wallet' })).toBeVisible({ timeout: 30000 });\n  40 |\n  41 |     await page.getByRole('button', { name: 'NGN Wallet' }).click();\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js:38:68"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:15:52.131Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\test-results\\wallet-Wallet-can-access-w-57fcb-between-NGN-and-USD-wallets-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b230e919c4d0f6ac9341-cec50a7932ea966e8467",
+              "file": "wallet.spec.js",
+              "line": 28,
+              "column": 3
+            },
+            {
+              "title": "can toggle wallet balance show/hide",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30445,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js",
+                            "column": 29,
+                            "line": 62
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('generic', { name: 'Toggle visibility of your investment balance' }).filter({ hasText: /USD Balance/i }).first()\nExpected: visible\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('generic', { name: 'Toggle visibility of your investment balance' }).filter({ hasText: /USD Balance/i }).first()\u001b[22m\n\n\n  60 |\n  61 |     const usdToggle = toggles.filter({ hasText: /USD Balance/i }).first();\n> 62 |     await expect(usdToggle).toBeVisible({ timeout: 30000 });\n     |                             ^\n  63 |\n  64 |     const before = (await usdToggle.innerText()).trim();\n  65 |     await usdToggle.click();\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js:62:29"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:15:54.328Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\test-results\\wallet-Wallet-can-toggle-wallet-balance-show-hide-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b230e919c4d0f6ac9341-e8ef6a1eb8f096998bec",
+              "file": "wallet.spec.js",
+              "line": 48,
+              "column": 3
+            },
+            {
+              "title": "can access wallet and switch between NGN and USD wallets",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 29558,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Wallet' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Wallet' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Wallet' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Wallet' })\u001b[22m\n\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js:33:62",
+                        "location": {
+                          "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js",
+                          "column": 62,
+                          "line": 33
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m assertAuthenticated(page)\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Wallet'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Wallet'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/wallet/i\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js",
+                            "column": 62,
+                            "line": 33
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Wallet' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Wallet' })\u001b[22m\n\n\n  31 |     await assertAuthenticated(page);\n  32 |\n> 33 |     await expect(page.getByRole('link', { name: 'Wallet' })).toBeVisible();\n     |                                                              ^\n  34 |\n  35 |     await page.getByRole('link', { name: 'Wallet' }).click();\n  36 |     await expect(page).toHaveURL(/wallet/i);\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js:33:62"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:17:40.432Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\test-results\\wallet-Wallet-can-access-w-57fcb-between-NGN-and-USD-wallets-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js",
+                        "column": 62,
+                        "line": 33
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b230e919c4d0f6ac9341-e3bc5ae1dbd29c3d8640",
+              "file": "wallet.spec.js",
+              "line": 28,
+              "column": 3
+            },
+            {
+              "title": "can toggle wallet balance show/hide",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 27437,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Wallet' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Wallet' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Wallet' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Wallet' })\u001b[22m\n\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js:53:62",
+                        "location": {
+                          "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js",
+                          "column": 62,
+                          "line": 53
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 51 |\u001b[39m     \u001b[36mawait\u001b[39m assertAuthenticated(page)\u001b[33m;\u001b[39m\n \u001b[90m 52 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Wallet'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 54 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Wallet'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/wallet/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 56 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js",
+                            "column": 62,
+                            "line": 53
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Wallet' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Wallet' })\u001b[22m\n\n\n  51 |     await assertAuthenticated(page);\n  52 |\n> 53 |     await expect(page.getByRole('link', { name: 'Wallet' })).toBeVisible();\n     |                                                              ^\n  54 |     await page.getByRole('link', { name: 'Wallet' }).click();\n  55 |     await expect(page).toHaveURL(/wallet/i);\n  56 |\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js:53:62"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:18:12.317Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\test-results\\wallet-Wallet-can-toggle-wallet-balance-show-hide-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js",
+                        "column": 62,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b230e919c4d0f6ac9341-d26f11d3f847dbc9432a",
+              "file": "wallet.spec.js",
+              "line": 48,
+              "column": 3
+            },
+            {
+              "title": "can access wallet and switch between NGN and USD wallets",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11064,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Wallet' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Wallet' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Wallet' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Wallet' })\u001b[22m\n\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js:33:62",
+                        "location": {
+                          "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js",
+                          "column": 62,
+                          "line": 33
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m assertAuthenticated(page)\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Wallet'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Wallet'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/wallet/i\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js",
+                            "column": 62,
+                            "line": 33
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Wallet' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Wallet' })\u001b[22m\n\n\n  31 |     await assertAuthenticated(page);\n  32 |\n> 33 |     await expect(page.getByRole('link', { name: 'Wallet' })).toBeVisible();\n     |                                                              ^\n  34 |\n  35 |     await page.getByRole('link', { name: 'Wallet' }).click();\n  36 |     await expect(page).toHaveURL(/wallet/i);\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js:33:62"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:19:14.803Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\test-results\\wallet-Wallet-can-access-w-57fcb-between-NGN-and-USD-wallets-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js",
+                        "column": 62,
+                        "line": 33
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b230e919c4d0f6ac9341-4f06f1aa4ae6ed9d1c84",
+              "file": "wallet.spec.js",
+              "line": 28,
+              "column": 3
+            },
+            {
+              "title": "can toggle wallet balance show/hide",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30078,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js",
+                            "column": 54,
+                            "line": 54
+                          },
+                          "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Wallet' })\u001b[22m\n\n\n  52 |\n  53 |     await expect(page.getByRole('link', { name: 'Wallet' })).toBeVisible();\n> 54 |     await page.getByRole('link', { name: 'Wallet' }).click();\n     |                                                      ^\n  55 |     await expect(page).toHaveURL(/wallet/i);\n  56 |\n  57 |     const toggles = page.getByRole('generic', {\n    at C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\tests\\wallet.spec.js:54:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-22T09:19:29.528Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\DELL\\Desktop\\Playwright-Risevest\\test-results\\wallet-Wallet-can-toggle-wallet-balance-show-hide-webkit\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b230e919c4d0f6ac9341-46866c5a889d15fc120a",
+              "file": "wallet.spec.js",
+              "line": 48,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-01-22T09:14:47.048Z",
+    "duration": 313190.252,
+    "expected": 1,
+    "skipped": 2,
+    "unexpected": 15,
+    "flaky": 0
+  }
+}
